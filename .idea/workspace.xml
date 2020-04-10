@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4ac74fe9-0d99-42aa-8886-22d20cbdf80c" name="Default Changelist" comment="" />
+    <list default="true" id="4ac74fe9-0d99-42aa-8886-22d20cbdf80c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,8 +67,8 @@
     <select />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="true">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/myFunctions.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="561">
@@ -89,11 +91,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/bookApp.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="99">
-              <caret line="56" column="46" selection-start-line="56" selection-start-column="46" selection-end-line="56" selection-end-column="46" />
+            <state relative-caret-position="136">
+              <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
             </state>
           </provider>
         </entry>
@@ -101,8 +103,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/customers.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="177">
-              <caret line="61" column="39" lean-forward="true" selection-start-line="61" selection-start-column="39" selection-end-line="61" selection-end-column="39" />
+            <state relative-caret-position="1037">
+              <caret line="61" column="39" selection-start-line="61" selection-start-column="39" selection-end-line="61" selection-end-column="39" />
             </state>
           </provider>
         </entry>
@@ -110,7 +112,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/addService.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="612">
+            <state relative-caret-position="1292">
               <caret line="76" column="79" selection-start-line="76" selection-start-column="74" selection-end-line="76" selection-end-column="79" />
             </state>
           </provider>
@@ -120,10 +122,7 @@
         <entry file="file://$PROJECT_DIR$/addServiceConfirm.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="187">
-              <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
-              <folding>
-                <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
+              <caret line="11" selection-start-line="11" selection-end-line="11" />
             </state>
           </provider>
         </entry>
@@ -136,7 +135,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/registration.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="595">
+            <state relative-caret-position="1751">
               <caret line="103" column="1" selection-start-line="103" selection-start-column="1" selection-end-line="111" selection-end-column="26" />
             </state>
           </provider>
@@ -187,6 +186,9 @@
       <find>id</find>
     </findStrings>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
@@ -228,7 +230,6 @@
         <option value="$PROJECT_DIR$/updateCust.php" />
         <option value="$PROJECT_DIR$/test/test_pwfields.html" />
         <option value="$PROJECT_DIR$/registration.php" />
-        <option value="$PROJECT_DIR$/bookApp.php" />
         <option value="$PROJECT_DIR$/reset_password.php" />
         <option value="$PROJECT_DIR$/test/test_.php" />
         <option value="$PROJECT_DIR$/viewAppointments.php" />
@@ -241,90 +242,33 @@
         <option value="$PROJECT_DIR$/addService.php" />
         <option value="$PROJECT_DIR$/addServiceConfirm.php" />
         <option value="$PROJECT_DIR$/myFunctions.php" />
+        <option value="$PROJECT_DIR$/bookApp.php" />
       </list>
     </option>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP7" />
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="2301" />
+    <option name="x" value="2300" />
     <option name="y" value="408" />
     <option name="width" value="1935" />
-    <option name="height" value="1039" />
+    <option name="height" value="1040" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="ProjectPane" />
       <pane id="Scope" />
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="com667ComputerSystemsproject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="com667ComputerSystemsproject" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="com667ComputerSystemsproject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="com667ComputerSystemsproject" type="462c0819:PsiDirectoryNode" />
-              <item name="bootstrap-4.0.0-dist" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="com667ComputerSystemsproject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="com667ComputerSystemsproject" type="462c0819:PsiDirectoryNode" />
-              <item name="bootstrap-4.0.0-dist" type="462c0819:PsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="com667ComputerSystemsproject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="com667ComputerSystemsproject" type="462c0819:PsiDirectoryNode" />
-              <item name="bootstrap-4.0.0-dist" type="462c0819:PsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
-              <item name="bootstrap.css" type="620a8d5e:NestingTreeNode" />
-            </path>
-            <path>
-              <item name="com667ComputerSystemsproject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="com667ComputerSystemsproject" type="462c0819:PsiDirectoryNode" />
-              <item name="bootstrap-4.0.0-dist" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="com667ComputerSystemsproject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="com667ComputerSystemsproject" type="462c0819:PsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="com667ComputerSystemsproject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="com667ComputerSystemsproject" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="com667ComputerSystemsproject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="com667ComputerSystemsproject" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-              <item name="jquery-3.4.1.js" type="620a8d5e:NestingTreeNode" />
-            </path>
-            <path>
-              <item name="com667ComputerSystemsproject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="com667ComputerSystemsproject" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="com667ComputerSystemsproject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="bcb0276e:PhpExternalLibrariesNodePatcher$PatchedExternalLibrariesNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="DatabaseDriversLRU" value="mysql" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="database.console.LAST_STATE" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../CW/musiversity_mini" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -378,11 +322,12 @@
       <workItem from="1584895552873" duration="19820000" />
       <workItem from="1585075655115" duration="11370000" />
       <workItem from="1586005298593" duration="26883000" />
+      <workItem from="1586515328717" duration="49000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="279052000" />
+    <option name="totallyTimeSpent" value="279101000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -395,9 +340,10 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="1913" y="-4" width="2062" height="1126" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.69911504" visible="true" weight="0.16113281" />
-      <window_info id="Structure" order="1" sideWeight="0.30088496" side_tool="true" visible="true" weight="0.16113281" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.69813174" visible="true" weight="0.16113281" />
+      <window_info id="Structure" order="1" sideWeight="0.30186823" side_tool="true" visible="true" weight="0.16113281" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" sideWeight="0.4995005" weight="0.32997987" />
@@ -670,13 +616,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bootstrap-4.0.0-dist/js/myJS.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" selection-start-line="4" selection-end-line="4" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/bootstrap-4.0.0-dist/js/myJS.js" />
     <entry file="file://$PROJECT_DIR$/stylistAppBookForm.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="408">
@@ -712,20 +652,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bookApp.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="99">
-          <caret line="56" column="46" selection-start-line="56" selection-start-column="46" selection-end-line="56" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/customers.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="177">
-          <caret line="61" column="39" lean-forward="true" selection-start-line="61" selection-start-column="39" selection-end-line="61" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/updateService.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
@@ -737,33 +663,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="561">
           <caret line="33" lean-forward="true" selection-end-line="204" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/registration.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="595">
-          <caret line="103" column="1" selection-start-line="103" selection-start-column="1" selection-end-line="111" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/addServConfirmed.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/addService.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="612">
-          <caret line="76" column="79" selection-start-line="76" selection-start-column="74" selection-end-line="76" selection-end-column="79" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/addServiceConfirm.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -785,6 +684,44 @@
             <element signature="n#resetPW_ClientChoice#0;n#!!top" />
             <element signature="n#resetPW_ClientChoiceConfirm#0;n#!!top" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/customers.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1037">
+          <caret line="61" column="39" selection-start-line="61" selection-start-column="39" selection-end-line="61" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/addService.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1292">
+          <caret line="76" column="79" selection-start-line="76" selection-start-column="74" selection-end-line="76" selection-end-column="79" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/addServiceConfirm.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" selection-start-line="11" selection-end-line="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/addServConfirmed.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/registration.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1751">
+          <caret line="103" column="1" selection-start-line="103" selection-start-column="1" selection-end-line="111" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bookApp.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
         </state>
       </provider>
     </entry>
