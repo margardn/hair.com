@@ -5,8 +5,6 @@ include 'myFunctions.php';
 
 user();
 
-//if(isset($_SESSION['field']))
-//    echo "Field - " . $_SESSION['field'] . " <br>Value - " . $_SESSION['value'] . "<br>EditID - " . $_SESSION['EditID'] ;
 ?>
 
 

@@ -6,7 +6,7 @@ include 'myFunctions.php';
 //if (isset($_SESSION['field']))
 //    echo $_SESSION['field'] . " - Field <br>" . $_SESSION['value'] . " - Value <br>" . $_SESSION['EditID'] . " - EditID <br>";
 //?>
-
+test
 
 <!doctype html>
 <html lang="en">
