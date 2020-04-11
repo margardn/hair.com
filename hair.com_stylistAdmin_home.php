@@ -52,12 +52,12 @@ if ($_SESSION['user']['type']!=3 && $_SESSION['user']['type']!=2){
             </form>
             <p/>
             <form method="get" action="customers.php">
-                <button class="btn btn-primary btn-block"><h1>Customers</h1></button>
+                <button class="btn btn-primary btn-block"><h1>View/Edit Customers</h1></button>
             </form>
             <p/>
 
-            <form method="get" action="create_client.php">
-                <button class="btn btn-primary btn-block"><h1>Create/edit client</h1></button>
+            <form method="get" action="createUser.php">
+                <button class="btn btn-primary btn-block"><h1>Create client</h1></button>
             </form>
 
             <p/>

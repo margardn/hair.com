@@ -21,7 +21,7 @@ user();
     <link href="css/my.css" rel="stylesheet"/>
 
     <!--    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">-->
-    <title>Admin/Home Hair.com</title>
+    <title>Customers</title>
 </head>
 <body>
 <div class="float-right sticky-top"
