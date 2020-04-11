@@ -57,6 +57,16 @@ user();
             <th scope="col">Duration</th>
             <th scope="col">Dev time</th>
             <th scope="col">Price</th>
+            <?php
+            if (isset($_SESSION['user']['type']) && $_SESSION['user']['type'] == 3) {
+                ?>
+
+                <th scope="col">Remove?</th>
+
+                <?php
+            }//close if(isset($_SESSION['user']['type'])==3)
+            ?>
+
 
         </tr>
         </thead>
@@ -95,6 +105,20 @@ user();
                         £<?php echo $price ?>
                     </div>
                 </td>
+                <?php
+                if (isset($_SESSION['user']['type']) && $_SESSION['user']['type'] == 3) {
+                    ?>
+
+                    <td>
+                        <button type="button" class="btn btn-info"
+
+                                deletePost()
+                                onclick=deletePost()>Delete</button>
+                    </td>
+
+                    <?php
+                }
+                ?>
 
 
             </tr>
@@ -168,7 +192,21 @@ user();
 
         });
 
+
+
     });
+
+
+    function deletePost() {
+        var ask = window.confirm("Are you sure you want to delete this Service?");
+        if (ask) {
+            //window.alert("This post was successfully deleted.");
+
+            window.location.href = "removeService.php?val=<?php echo $id  ?>";
+
+        }
+    }
+
 </script>
 
 

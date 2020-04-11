@@ -4,21 +4,28 @@ include 'connectDb.php';
 include 'myFunctions.php';
 user();
 
+$id = $_GET["val"]??$_SESSION['user']['id'];;
 
-$query = "SELECT UserID, Firstname, Surname FROM tblusers";
+$query = "SELECT UserID, Firstname, Surname FROM tblusers where UserID = $id";
 $result = mysqli_query($db, $query);
 
 
 //set one row as the result
 $row = $result->fetch_assoc(); // fetch_assoc() - Fetch a result row as an associative array. Can now be called "$row["name"]"
-print_r($row);
+//print_r($row);
 
+
+$query2 = "SELECT * FROM tblservices";
+$result2 = mysqli_query($db, $query2);
+
+$query3 = "SELECT UserID, Firstname, Surname FROM tblusers where UserType != '1'";
+$result3 = mysqli_query($db, $query3);
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Services</title>
+    <title>Book Appt Form</title>
     <link href="bootstrap-4.0.0-dist\css\bootstrap.min.css" rel="stylesheet"/><!-- Link to CSS Bootstrap -->
     <link href="bootstrap-4.0.0-dist\js\bootstrap.min.js" rel="stylesheet"/>
     <link href="js/jquery-3.4.1.js">
@@ -32,11 +39,12 @@ print_r($row);
 <?php banner('Hair.com', 'Your ultimate hair booking system...'); ?>
 
 <div class="container text-muted">
+    <?php navBar(); ?>
     <div class="wrapper fadeInDown">
         <div id="formContent">
 
             <BR>
-            <h4>Services</h4>
+            <h4>Book Appointment</h4>
             <BR>
             <div class="modal-body">
 
@@ -64,7 +72,7 @@ print_r($row);
                                 $return = $row2['serviceID'];
                                 ?>
                                 <option value=<?php echo $return ?>><?php echo $service ?></option>
-                                <?php
+                            <?php
 
                             }
                             ?>

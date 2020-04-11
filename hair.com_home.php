@@ -5,6 +5,8 @@ include 'myFunctions.php';
 
 user(); //This function check to see if the user is currently logged in
 
+$id=$_SESSION['user']['type'];
+
 if ($_SESSION['user']['type'] == 2 || $_SESSION['user']['type'] == 3) {
     echo '<script>window.location="hair.com_stylistAdmin_home.php"</script>';
     exit();
@@ -43,8 +45,8 @@ if ($_SESSION['user']['type'] == 2 || $_SESSION['user']['type'] == 3) {
             <p/>
 
             <p/>
-            <form method="get" action=" ">
-                <button class="btn btn-primary btn-block"><h1>Book an appointment</h1></button>
+            <form method="get" action="appBookForm.php">
+                <button class="btn btn-primary btn-block" ><h1>Book an appointment</h1></button>
             </form>
             <p/>
             <form method="get" action=" ">
@@ -65,6 +67,10 @@ if ($_SESSION['user']['type'] == 2 || $_SESSION['user']['type'] == 3) {
         </div>
     </div>
 </div>
+
+
+
+
 
 
 </body>

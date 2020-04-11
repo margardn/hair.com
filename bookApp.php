@@ -3,10 +3,8 @@ session_start();
 include 'connectDb.php';
 include 'myFunctions.php';
 
-//if (isset($_SESSION['field']))
-//    echo $_SESSION['field'] . " - Field <br>" . $_SESSION['value'] . " - Value <br>" . $_SESSION['EditID'] . " - EditID <br>";
-//?>
-test
+?>
+
 
 <!doctype html>
 <html lang="en">
@@ -69,7 +67,7 @@ test
             $phonenumber = $row['phonenumber'];
 
             ?>
-            <tr style="cursor: pointer;" onclick="location.href='stylistAppBookForm.php?val=<?php echo $id  ?>';" >
+            <tr style="cursor: pointer;" onclick="location.href='appBookForm.php?val=<?php echo $id  ?>';" >
             <td> <?php echo $row['UserID'] ?> </td>
                 <td>
                     <div> <?php echo $Firstname . " " . $surname ?> </div>

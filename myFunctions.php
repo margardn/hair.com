@@ -95,7 +95,7 @@ function Registration_error_email()
                 elseif (!isset($_SESSION['user']['type']))
                     Button("Back", "registration.php");
 
-                 ?>
+                ?>
             </div>
         </div>
     </div>
@@ -116,6 +116,11 @@ function Button($string, $string2)
 
 function navBar()
 {
+
+    if ($_SESSION['user']['type']==1)
+        $string = "hair.com_home.php";
+    if ($_SESSION['user']['type']==2 || $_SESSION['user']['type']==3)
+        $string = "hair.com_stylistAdmin_home.php";
     ?>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand">Hi <?php echo $_SESSION['user']['firstname'] ?></a>
@@ -136,6 +141,9 @@ function navBar()
                 <?php } ?>
                 <li class="nav-item">
                     <a class="nav-link" href="profile.php">Profile <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="<?php echo $string ?>">Home <span class="sr-only">(current)</span></a>
                 </li>
 
             </ul>
@@ -178,10 +186,6 @@ function navBarOld()
 
 function createUser()
 {
-//
-//session_start();
-//include 'connectDb.php';
-//include 'myFunctions.php';
 
 
     ?>
@@ -193,7 +197,8 @@ function createUser()
             <?php
             if (isset($_SESSION['user']['type'])) {
                 if ($_SESSION['user']['type'] == 2 || $_SESSION['user']['type'] == 3)
-                    echo "Create User";  } //Close if (isset($_SESSION['user']['type']))
+                    echo "Create User";
+            } //Close if (isset($_SESSION['user']['type']))
 
             elseif (!isset($_SESSION['user']['type']))
                 echo "Registration form";
@@ -234,6 +239,7 @@ function createUser()
         if (isset($_SESSION['user']['type'])) {
             if ($_SESSION['user']['type'] == 2 || $_SESSION['user']['type'] == 3)
                 navBar();
+
         }
         ?>
 
@@ -243,11 +249,19 @@ function createUser()
                 <BR>
 
                 <?php if (isset($_SESSION['user']['type'])) {
-                    if ($_SESSION['user']['type'] == 2 || $_SESSION['user']['type'] == 3) { ?>
-                        <h4>New client account setup</h4>
+                    if ($_SESSION['user']['type'] == 2) { ?>
+                        <h2>New client account setup</h2>
+                        <h4 class="text-danger">You have "Stylist" privileges and can create client accounts only</h4>
                         <p>Please enter customers details below:</p>
 
-                    <?php }// close if ($_SESSION['user']['type']==2 || $_SESSION['user']['type']==3)
+                    <?php }// close if ($_SESSION['user']['type']==2)
+
+                    if ($_SESSION['user']['type'] == 3) { ?>
+                        <h2>New account setup</h2>
+                        <h4 class="text-danger">You have "ADMIN" privileges and can create all account types</h4>
+                        <p>Please enter user details below:</p>
+
+                    <?php }// close if ($_SESSION['user']['type']==3)
 
 
                     ?>
@@ -263,7 +277,6 @@ function createUser()
                 ?>
 
 
-                <BR>
                 <div class="modal-body">
 
                     <form action="registration_confirm.php" method="post">
@@ -339,15 +352,26 @@ function createUser()
                             </div>
                         </div>
 
-                        <div class="form-group row">
-                            <label class="col-sm-3 col-form-label">User Type</label>
-                            <select class="col-sm-9" name="userType" required>
-                                <option value="" disabled selected hidden>Please select...</option>
-                                <option value="1">Client</option>
-                                <option value="2">Stylist</option>
-                                <option value="3">Full Admin</option>
-                            </select>
-                        </div>
+                        <?php
+
+
+                        if (isset($_SESSION['user']['type']) && $_SESSION['user']['type'] == 3) {
+
+                            ?>
+
+                            <div class="form-group row">
+                                <label class="col-sm-3 col-form-label">User Type</label>
+                                <select class="col-sm-9" name="userType" required>
+                                    <option value="1" disabled selected hidden>Please select...</option>
+                                    <option value="1">Client</option>
+                                    <option value="2">Stylist</option>
+                                    <option value="3">Full Admin</option>
+                                </select>
+                            </div>
+
+                            <?php
+                        } //Close if (isset($_SESSION['user']['type']) && $_SESSION['user']['type'] == 3)
+                        ?>
 
                         <div><input type="submit" class="btn btn-default" id="submit-button" value="Submit"></div>
                     </form>
@@ -365,7 +389,8 @@ function createUser()
     <?php
 }
 
-function confirmCreate(){
+function confirmCreate()
+{
 
     include 'connectDb.php';
 
@@ -394,7 +419,13 @@ function confirmCreate(){
 
     $inputPassword = $_POST['inputPassword'];
     $confirmPassword = $_POST['confirmPassword'];
-    $userType = (int)$_POST['userType'];
+
+
+    if (isset($_POST['userType'])) {
+        $userType = (int)$_POST['userType'];
+    } else
+        $userType = (int)1;
+
     $salt = '2plj*H6uXS&OXq' . $inputPassword . 'q4C5gnJYG235&n';//salting will make hashing even more secure
     $hashed = hash('sha512', $salt);
 
@@ -507,25 +538,24 @@ function confirmCreate(){
 
 
                 <?php
-                if ($newUser){
+                if ($newUser) {
                     ?>
                     <br>Hi <font color="black"><?php echo $_SESSION['user']['firstname'] ?></font>,</br>
                     <p>Welcome to Hair.com!!!</p>
-                    <p>Your account has been created with the following details. Please be aware these details can be edited
+                    <p>Your account has been created with the following details. Please be aware these details can be
+                        edited
                         from your account page</p>
                     <?php
 
-                }elseif (!$newUser){
+                } elseif (!$newUser) {
                     ?>
-                    <p>New user successfully created with the following details. Please pass these details on to the customer</p>
+                    <p>New user successfully created with the following details. Please pass these details on to the
+                        customer</p>
 
                     <?php
                 }
 
                 ?>
-
-
-
 
 
                 <table width="400" visible="false">
@@ -543,7 +573,8 @@ function confirmCreate(){
                             <Label Font-Size=Smaller runat=server> Surname: </Label>
                         </td>
                         <td visible="false">
-                            <Label Font-Size=Smaller runat=server><font color="black"><?php echo $surname ?></font></Label>
+                            <Label Font-Size=Smaller runat=server><font
+                                        color="black"><?php echo $surname ?></font></Label>
                         </td>
                     </tr>
                     <tr>
@@ -551,7 +582,8 @@ function confirmCreate(){
                             <Label ID="Label8" Font-Size=Smaller runat=server> Email address/Username: </Label>
                         </td>
                         <td visible="false">
-                            <Label Font-Size=Smaller runat=server><font color="black"><?php echo $email ?></font></Label>
+                            <Label Font-Size=Smaller runat=server><font
+                                        color="black"><?php echo $email ?></font></Label>
                         </td>
                     </tr>
 
@@ -570,7 +602,8 @@ function confirmCreate(){
                             <Label ID="Label8" Font-Size=Smaller runat=server> Address: </Label>
                         </td>
                         <td visible="false">
-                            <Label Font-Size=Smaller runat=server><font color="black"><?php echo $address1 ?></font></Label>
+                            <Label Font-Size=Smaller runat=server><font
+                                        color="black"><?php echo $address1 ?></font></Label>
                         </td>
                     </tr>
                     <tr>
@@ -578,7 +611,8 @@ function confirmCreate(){
                             <Label ID="Label8" Font-Size=Smaller runat=server> </Label>
                         </td>
                         <td visible="false">
-                            <Label Font-Size=Smaller runat=server><font color="black"><?php echo $address2 ?></font></Label>
+                            <Label Font-Size=Smaller runat=server><font
+                                        color="black"><?php echo $address2 ?></font></Label>
                         </td>
                     </tr>
 
@@ -587,7 +621,8 @@ function confirmCreate(){
                             <Label ID="Label8" Font-Size=Smaller runat=server> </Label>
                         </td>
                         <td visible="false">
-                            <Label Font-Size=Smaller runat=server><font color="black"><?php echo $postcode ?></font></Label>
+                            <Label Font-Size=Smaller runat=server><font
+                                        color="black"><?php echo $postcode ?></font></Label>
                         </td>
                     </tr>
 
