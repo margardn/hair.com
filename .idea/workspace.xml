@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4ac74fe9-0d99-42aa-8886-22d20cbdf80c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/test/test_.php" beforeDir="false" afterPath="$PROJECT_DIR$/test/test_.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/viewAppointments.php" beforeDir="false" afterPath="$PROJECT_DIR$/viewAppointments.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/customers.php" beforeDir="false" afterPath="$PROJECT_DIR$/customers.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myFunctions.php" beforeDir="false" afterPath="$PROJECT_DIR$/myFunctions.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -69,23 +70,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/myFunctions.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="597">
-              <caret line="184" column="1" selection-start-line="184" selection-start-column="1" selection-end-line="184" selection-end-column="1" />
+            <state relative-caret-position="1255">
+              <caret line="267" column="20" lean-forward="true" selection-start-line="267" selection-start-column="20" selection-end-line="267" selection-end-column="20" />
               <folding>
                 <element signature="n#banner#0;n#!!top" />
                 <element signature="n#ContainsNumbers#0;n#!!top" />
                 <element signature="n#Error_num_in_string#0;n#!!top" />
                 <element signature="n#Registration_error_email#0;n#!!top" />
                 <element signature="n#Button#0;n#!!top" />
+                <element signature="n#navBar#0;n#!!top" />
                 <element signature="n#navBarOld#0;n#!!top" />
-                <element signature="e#4505#4527#0#HTML" expanded="true" />
-                <element signature="e#4909#4931#0#HTML" expanded="true" />
-                <element signature="n#createUser#0;n#!!top" />
-                <element signature="e#5936#5958#0#HTML" expanded="true" />
                 <element signature="n#confirmCreate#0;n#!!top" />
+                <element signature="n#user#0;n#!!top" />
                 <element signature="n#printAllSessionVars#0;n#!!top" />
                 <element signature="n#updatePassword#0;n#!!top" />
                 <element signature="n#resetPW_forgot#0;n#!!top" />
@@ -97,11 +96,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/viewAppointments.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="476">
-              <caret line="92" column="49" selection-start-line="92" selection-start-column="49" selection-end-line="92" selection-end-column="49" />
+            <state relative-caret-position="1394">
+              <caret line="82" column="18" lean-forward="true" selection-start-line="82" selection-start-column="18" selection-end-line="82" selection-end-column="18" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/customers.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2040">
+              <caret line="120" column="102" selection-start-line="120" selection-start-column="102" selection-end-line="120" selection-end-column="102" />
             </state>
           </provider>
         </entry>
@@ -125,9 +133,18 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/addServiceConfirm.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="391">
+              <caret line="23" column="30" selection-start-line="23" selection-start-column="30" selection-end-line="23" selection-end-column="30" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/stubs/date/date.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="397">
+            <state relative-caret-position="5015">
               <caret line="295" column="9" selection-start-line="295" selection-start-column="9" selection-end-line="295" selection-end-column="53" />
             </state>
           </provider>
@@ -174,8 +191,8 @@
       <find>if</find>
       <find>edit</find>
       <find>butt</find>
-      <find>full</find>
       <find>alert</find>
+      <find>full</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -222,28 +239,28 @@
         <option value="$PROJECT_DIR$/bootstrap-4.0.0-dist/js/myJS.js" />
         <option value="$PROJECT_DIR$/addService.php" />
         <option value="$PROJECT_DIR$/addServiceConfirm.php" />
-        <option value="$PROJECT_DIR$/customers.php" />
         <option value="$PROJECT_DIR$/hair.com_stylistAdmin_home.php" />
         <option value="$PROJECT_DIR$/registration_confirm.php" />
         <option value="$PROJECT_DIR$/registration.php" />
         <option value="$PROJECT_DIR$/createUser.php" />
         <option value="$PROJECT_DIR$/removeService.php" />
         <option value="$PROJECT_DIR$/services.php" />
-        <option value="$PROJECT_DIR$/myFunctions.php" />
         <option value="$PROJECT_DIR$/bookApp.php" />
         <option value="$PROJECT_DIR$/hair.com_home.php" />
         <option value="$PROJECT_DIR$/appBookForm.php" />
         <option value="$PROJECT_DIR$/test/test_.php" />
         <option value="$PROJECT_DIR$/viewAppointments.php" />
+        <option value="$PROJECT_DIR$/customers.php" />
+        <option value="$PROJECT_DIR$/myFunctions.php" />
       </list>
     </option>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP7" />
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="1910" />
-    <option name="y" value="-7" />
-    <option name="width" value="2579" />
-    <option name="height" value="1409" />
+    <option name="y" value="3" />
+    <option name="width" value="1935" />
+    <option name="height" value="1040" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -329,12 +346,13 @@
       <workItem from="1584895552873" duration="19820000" />
       <workItem from="1585075655115" duration="11370000" />
       <workItem from="1586005298593" duration="26883000" />
-      <workItem from="1586515328717" duration="34042000" />
+      <workItem from="1586515328717" duration="37256000" />
+      <workItem from="1587203520803" duration="227000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="313094000" />
+    <option name="totallyTimeSpent" value="316535000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -349,8 +367,8 @@
     <frame x="1913" y="-4" width="2062" height="1126" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.69813174" visible="true" weight="0.16113281" />
-      <window_info id="Structure" order="1" sideWeight="0.30186823" side_tool="true" visible="true" weight="0.16113281" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.6971485" visible="true" weight="0.16113281" />
+      <window_info id="Structure" order="1" sideWeight="0.30285153" side_tool="true" visible="true" weight="0.16113281" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" sideWeight="0.4995005" weight="0.32940018" />
@@ -395,17 +413,6 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/myFunctions.php</url>
-          <line>186</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/78197925-877f-465d-b313-4edb6fe4571a/console.sql">
@@ -538,13 +545,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/create_client.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="9" selection-start-line="3" selection-start-column="9" selection-end-line="3" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/create_client.php" />
     <entry file="file://$PROJECT_DIR$/insert.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="408">
@@ -590,13 +591,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/services_old.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" selection-start-line="14" selection-end-line="14" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/services_old.php" />
     <entry file="file://$PROJECT_DIR$/bootstrap-4.0.0-dist/js/myJS.js" />
     <entry file="file://$PROJECT_DIR$/updateCust.php">
       <provider selected="true" editor-type-id="text-editor">
@@ -621,13 +616,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/addServConfirmed.php">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/addServiceConfirm.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="23" column="30" selection-start-line="23" selection-start-column="30" selection-end-line="23" selection-end-column="30" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/addService.php">
       <provider selected="true" editor-type-id="text-editor">
@@ -661,13 +649,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3400">
           <caret line="200" column="78" selection-start-line="200" selection-start-column="78" selection-end-line="200" selection-end-column="78" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/customers.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="629">
-          <caret line="37" column="4" selection-start-line="37" selection-start-column="4" selection-end-line="37" selection-end-column="22" />
         </state>
       </provider>
     </entry>
@@ -706,43 +687,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/stubs/date/date.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="397">
-          <caret line="295" column="9" selection-start-line="295" selection-start-column="9" selection-end-line="295" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/test_.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="34" column="23" selection-start-line="34" selection-start-column="23" selection-end-line="34" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/load.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="39" selection-start-line="10" selection-start-column="39" selection-end-line="10" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/myFunctions.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="597">
-          <caret line="184" column="1" selection-start-line="184" selection-start-column="1" selection-end-line="184" selection-end-column="1" />
+        <state relative-caret-position="1255">
+          <caret line="267" column="20" lean-forward="true" selection-start-line="267" selection-start-column="20" selection-end-line="267" selection-end-column="20" />
           <folding>
             <element signature="n#banner#0;n#!!top" />
             <element signature="n#ContainsNumbers#0;n#!!top" />
             <element signature="n#Error_num_in_string#0;n#!!top" />
             <element signature="n#Registration_error_email#0;n#!!top" />
             <element signature="n#Button#0;n#!!top" />
+            <element signature="n#navBar#0;n#!!top" />
             <element signature="n#navBarOld#0;n#!!top" />
-            <element signature="e#4505#4527#0#HTML" expanded="true" />
-            <element signature="e#4909#4931#0#HTML" expanded="true" />
-            <element signature="n#createUser#0;n#!!top" />
-            <element signature="e#5936#5958#0#HTML" expanded="true" />
             <element signature="n#confirmCreate#0;n#!!top" />
+            <element signature="n#user#0;n#!!top" />
             <element signature="n#printAllSessionVars#0;n#!!top" />
             <element signature="n#updatePassword#0;n#!!top" />
             <element signature="n#resetPW_forgot#0;n#!!top" />
@@ -755,8 +713,43 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/viewAppointments.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="92" column="49" selection-start-line="92" selection-start-column="49" selection-end-line="92" selection-end-column="49" />
+        <state relative-caret-position="1394">
+          <caret line="82" column="18" lean-forward="true" selection-start-line="82" selection-start-column="18" selection-end-line="82" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/customers.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2040">
+          <caret line="120" column="102" selection-start-line="120" selection-start-column="102" selection-end-line="120" selection-end-column="102" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/load.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="39" selection-start-line="10" selection-start-column="39" selection-end-line="10" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/test_.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="34" column="23" selection-start-line="34" selection-start-column="23" selection-end-line="34" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/addServiceConfirm.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="23" column="30" selection-start-line="23" selection-start-column="30" selection-end-line="23" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/stubs/date/date.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5015">
+          <caret line="295" column="9" selection-start-line="295" selection-start-column="9" selection-end-line="295" selection-end-column="53" />
         </state>
       </provider>
     </entry>

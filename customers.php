@@ -118,7 +118,7 @@ user();
                 <td> <?php echo strtok($row['DateRegistered'], " ") ?></td>
 
                 <td>
-                    <button type="button" class="btn btn-info" onclick="location.href='stylistAppBookForm.php?val=<?php echo $id  ?>';">Book</button>
+                    <button type="button" class="btn btn-info" onclick="location.href='appBookForm.php?val=<?php echo $id  ?>';">Book</button>
                 </td>
             </tr>
 

@@ -117,9 +117,9 @@ function Button($string, $string2)
 function navBar()
 {
 
-    if ($_SESSION['user']['type']==1)
+    if ($_SESSION['user']['type'] == 1)
         $string = "hair.com_home.php";
-    if ($_SESSION['user']['type']==2 || $_SESSION['user']['type']==3)
+    if ($_SESSION['user']['type'] == 2 || $_SESSION['user']['type'] == 3)
         $string = "hair.com_stylistAdmin_home.php";
     ?>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -251,21 +251,22 @@ function createUser()
                 <?php if (isset($_SESSION['user']['type'])) {
                     if ($_SESSION['user']['type'] == 2) { ?>
                         <h2>New client account setup</h2>
-                        <h4 class="text-danger">You have "Stylist" privileges and can create client accounts only</h4>
+                        <h4 class="text-danger">**NOTE: You have "Stylist" privileges and can create client accounts
+                            only**</h4>
                         <p>Please enter customers details below:</p>
 
                     <?php }// close if ($_SESSION['user']['type']==2)
 
                     if ($_SESSION['user']['type'] == 3) { ?>
                         <h2>New account setup</h2>
-                        <h4 class="text-danger">You have "ADMIN" privileges and can create all account types</h4>
+                        <h4 class="text-danger">**NOTE: You have "ADMIN" privileges and can create all account
+                            types**</h4>
                         <p>Please enter user details below:</p>
 
-                    <?php }// close if ($_SESSION['user']['type']==3)
+                        <?php
 
-
-                    ?>
-                <?php }//close if(isset($_SESSION['user']['type']))
+                    }// close if ($_SESSION['user']['type']==3)
+                }//close if(isset($_SESSION['user']['type']))
 
                 elseif (!isset($_SESSION['user']['type'])) {
 
