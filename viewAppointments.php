@@ -39,14 +39,16 @@ user();
 
         $(document).ready(function () {
             var calendar = $('#calendar').fullCalendar({
-                editable: true,
+                editable: false,
+                //defaultView: 'month'
                 header: {
                     left: 'prev,next today',
                     center: 'title',
                     right: 'month,agendaWeek,agendaDay'
                 },
+
                 events: 'load.php',
-                // selectable: true,
+                selectable: false,
                 // selectHelper: true,
                 // select: function (start, end, allDay) {
                 //     var title = prompt("Enter Event Title");

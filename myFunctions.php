@@ -1011,3 +1011,91 @@ function resetPW_ClientChoiceConfirm()
     }
 }
 
+function updateSlots($month, $year)
+{
+
+    $string = null;
+
+    $length = count(slotsInAMonth($month, $year)) - 1;
+
+    for ($index = 0; $index < $length; $index++) {
+
+        if ($length = 372)
+            $comma = null;
+
+        $string .= "('" . slotsInAMonth($month, $year)[$index] . "', '" . slotsInAMonth($month, $year)[$index + 1] . "'), ";
+        //echo slotsInAMonth($month, $year)[$index] . "<br>";
+
+    }
+
+    $string = substr($string, 0, -2);
+    return "INSERT INTO tblslots (`start_event`, `end_event`) VALUES " . $string;
+
+}
+
+function slotsInAMonth($month, $year){
+    $month = $month;
+    $year = $year;
+    $start_date = "01-" . $month . "-" . $year;
+    $start_time = strtotime($start_date);
+
+    $end_time = strtotime("+1 month", $start_time);
+
+    for ($i = $start_time; $i < $end_time; $i += 86400) {
+
+        if (date('D', $i) != 'Sun') {
+            if (date('D', $i) != 'Mon') {
+
+
+
+                for ($z = 0; $z < 17; $z++) {
+                    $slots[] = date('Y-m-d', $i) . " " . get_hours_range()[$z];
+                }
+            }
+        }
+
+
+    }
+    return $slots;
+}
+
+function get_hours_range()
+{
+//    $format = 'G:i:s';
+//    $start = 32400;
+//    $end = 63000;
+//    $step = 1800;
+
+    $format = setSlots()[0];
+    $start = setSlots()[1];
+    $end = setSlots()[2];
+    $step = setSlots()[3];
+
+
+    $i = 0;
+    $times = array();
+    foreach (range($start, $end, $step) as $timestamp) {
+        $hour_mins = gmdate('H:i', $timestamp);
+
+
+        if (!empty($format)) {
+            $times[$i] = gmdate($format, $timestamp);
+            $i++;
+        } else {
+            $times[$i] = $hour_mins;
+            $i++;
+        }
+    }
+    return $times;
+}
+
+function setSlots(){
+    $format = 'G:i:s';
+    $start = 32400;
+    $end = 63000;
+    $step = 1800;
+    $times = array($format, $start, $end, $step);
+
+    return $times;
+
+}

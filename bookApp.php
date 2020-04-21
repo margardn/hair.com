@@ -67,7 +67,7 @@ include 'myFunctions.php';
             $phonenumber = $row['phonenumber'];
 
             ?>
-            <tr style="cursor: pointer;" onclick="location.href='appBookForm.php?val=<?php echo $id  ?>';" >
+            <tr style="cursor: pointer;" onclick="location.href='appBookForm.php?custID=<?php echo $id  ?>';" >
             <td> <?php echo $row['UserID'] ?> </td>
                 <td>
                     <div> <?php echo $Firstname . " " . $surname ?> </div>

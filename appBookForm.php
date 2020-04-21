@@ -4,7 +4,7 @@ include 'connectDb.php';
 include 'myFunctions.php';
 user();
 
-$id = $_GET["val"]??$_SESSION['user']['id'];;
+$id = $_GET["custID"]??$_SESSION['user']['id'];;
 
 $query = "SELECT UserID, Firstname, Surname FROM tblusers where UserID = $id";
 $result = mysqli_query($db, $query);
@@ -48,7 +48,7 @@ $result3 = mysqli_query($db, $query3);
             <BR>
             <div class="modal-body">
 
-                <form action="*********.php" method="post">
+                <form action="testBook.php?customerID=<?php echo $id  ?>" method="post">
 
                     <div class="form-group row">
                         <label class="col-sm-3 col-form-label">Customer Name</label>
@@ -62,7 +62,7 @@ $result3 = mysqli_query($db, $query3);
 
                         <label class="col-sm-3 col-form-label">Select a service:</label>
 
-                        <select class="col-sm-9" name="service" required>
+                        <select class="col-sm-9" name="serviceID" required>
                             <option value=""  hidden>Please select a service...</option>
                             <?php //with help from https://www.youtube.com/watch?v=TNPxG2yrPlM
 
@@ -83,7 +83,7 @@ $result3 = mysqli_query($db, $query3);
 
                         <label class="col-sm-3 col-form-label">Select a stylist:</label>
 
-                        <select class="col-sm-9" name="stylist" required>
+                        <select class="col-sm-9" name="stylistID" required>
 
                             <option value="" hidden>Please select a stylist...</option>
                             <?php //with help from https://www.youtube.com/watch?v=TNPxG2yrPlM
