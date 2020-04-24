@@ -48,7 +48,7 @@ $result3 = mysqli_query($db, $query3);
             <BR>
             <div class="modal-body">
 
-                <form action="testBook.php?customerID=<?php echo $id  ?>" method="post">
+                <form action="selectSlot.php?customerID=<?php echo $id  ?>" method="post">
 
                     <div class="form-group row">
                         <label class="col-sm-3 col-form-label">Customer Name</label>

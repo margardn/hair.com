@@ -1020,12 +1020,12 @@ function updateSlots($month, $year)
 
     for ($index = 0; $index < $length; $index++) {
 
-        if ($length = 372)
-            $comma = null;
 
-        $string .= "('" . slotsInAMonth($month, $year)[$index] . "', '" . slotsInAMonth($month, $year)[$index + 1] . "'), ";
-        //echo slotsInAMonth($month, $year)[$index] . "<br>";
+      //  if (date('D', strtotime(slotsInAMonth($month, $year)[1]))==date('D', strtotime(slotsInAMonth($month, $year)[1]))) {
 
+            $string .= "('" . slotsInAMonth($month, $year)[$index] . "', '" . slotsInAMonth($month, $year)[$index + 1] . "'), ";
+            //echo slotsInAMonth($month, $year)[$index] . "<br>";
+     //   }
     }
 
     $string = substr($string, 0, -2);
@@ -1098,4 +1098,34 @@ function setSlots(){
 
     return $times;
 
+}
+
+function get1Week(){
+    include 'connectDb.php';
+
+    $currentdate = date("Y-m-d") . " " .  date("G:i:s");
+    $currentdateTemp = strtotime($currentdate);
+    $endDate = strtotime("+7 day", strtotime(date("Y/m/d")));
+    $endDate = date("Y-m-d", $endDate)  . " 18:00:00";
+
+    $query = "SELECT * FROM tblslots WHERE start_event between  '$currentdate' and '$endDate'";
+
+    //$query = "SELECT * FROM tblslots WHERE start_event between  '$currentdate' and '2020-04-30 18:00:00'";
+    $result = $db->query($query);
+
+    return $result;
+}
+
+function get2ndWeek(){
+    include 'connectDb.php';
+
+    $currentdate = date("Y-m-d") . " " .  date("G:i:s");
+    $currentdateTemp = strtotime($currentdate);
+    $endDate = strtotime("+7 day", $currentdateTemp);
+    $endDate = date("Y-m-d", $endDate)  . " " .  date("G:i:s");
+
+    $query = "SELECT * FROM tblslots WHERE start_event between  '$currentdate' and '$endDate'";
+    $result = $db->query($query);
+
+    return $result;
 }
