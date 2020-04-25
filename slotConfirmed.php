@@ -5,7 +5,7 @@ include 'myFunctions.php';
 
 //Initialise variables
 $customerID = $_POST['customerID'];
-$serviceID = $_POST['serviceID'];
+//$serviceID = $_POST['serviceID'];
 $stylistID = $_POST['stylistID'];
 $slotID = $_POST['slotID'];
 $servicename = $_POST['serviceName'];
@@ -14,8 +14,8 @@ $servicename = $_POST['serviceName'];
 
 //insert user input to database------------------------------>
 
-$query = "INSERT INTO tblappointments (title, customerID, stylistID, serviceID, slotID) 
-VALUES ('$servicename', $customerID, $stylistID, $serviceID, $slotID)";
+$query = "INSERT INTO tblappointments (title, customerID, stylistID, slotID) 
+VALUES ('$servicename', $customerID, $stylistID, $slotID)";
 
 if ($db->query($query)==true) {
 //$db->query($query);

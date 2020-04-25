@@ -39,7 +39,7 @@ $(document).ready(function() {
     $('[data-toggle="collapse"]').click(function() {
         $(this).toggleClass( "active" );
         if ($(this).hasClass("active")) {
-            $(this).text("Hide");
+            $(this).text("Hide2");
         } else {
             $(this).text("Show");
         }

@@ -39,6 +39,9 @@ user();
 
         $(document).ready(function () {
             var calendar = $('#calendar').fullCalendar({
+
+                minTime: "08:00:00",
+                maxTime: "18:00:00",
                 editable: false,
                 //defaultView: 'month'
                 header: {
@@ -136,8 +139,16 @@ user();
     <p></p>
     <br/>
     <div class="container">
+        <form method="get" action="bookApp.php">
+            <button class="btn btn-sm">Book Appointment</button>
+        </form>
+        <p></p>
         <div id="calendar"></div>
     </div>
+
+
+
+
 </div>
 </body>
 </html>

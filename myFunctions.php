@@ -1021,11 +1021,11 @@ function updateSlots($month, $year)
     for ($index = 0; $index < $length; $index++) {
 
 
-      //  if (date('D', strtotime(slotsInAMonth($month, $year)[1]))==date('D', strtotime(slotsInAMonth($month, $year)[1]))) {
+        //  if (date('D', strtotime(slotsInAMonth($month, $year)[1]))==date('D', strtotime(slotsInAMonth($month, $year)[1]))) {
 
-            $string .= "('" . slotsInAMonth($month, $year)[$index] . "', '" . slotsInAMonth($month, $year)[$index + 1] . "'), ";
-            //echo slotsInAMonth($month, $year)[$index] . "<br>";
-     //   }
+        $string .= "('" . slotsInAMonth($month, $year)[$index] . "', '" . slotsInAMonth($month, $year)[$index + 1] . "'), ";
+        //echo slotsInAMonth($month, $year)[$index] . "<br>";
+        //   }
     }
 
     $string = substr($string, 0, -2);
@@ -1033,7 +1033,8 @@ function updateSlots($month, $year)
 
 }
 
-function slotsInAMonth($month, $year){
+function slotsInAMonth($month, $year)
+{
     $month = $month;
     $year = $year;
     $start_date = "01-" . $month . "-" . $year;
@@ -1045,7 +1046,6 @@ function slotsInAMonth($month, $year){
 
         if (date('D', $i) != 'Sun') {
             if (date('D', $i) != 'Mon') {
-
 
 
                 for ($z = 0; $z < 17; $z++) {
@@ -1089,7 +1089,8 @@ function get_hours_range()
     return $times;
 }
 
-function setSlots(){
+function setSlots()
+{
     $format = 'G:i:s';
     $start = 32400;
     $end = 63000;
@@ -1100,13 +1101,15 @@ function setSlots(){
 
 }
 
-function get1Week(){
+function get1Week()
+{
     include 'connectDb.php';
 
-    $currentdate = date("Y-m-d") . " " .  date("G:i:s");
+    //$currentdate = "2020-04-27 10:29:00";
+    $currentdate = date("Y-m-d") . " " . date("G:i:s");
     $currentdateTemp = strtotime($currentdate);
-    $endDate = strtotime("+7 day", strtotime(date("Y/m/d")));
-    $endDate = date("Y-m-d", $endDate)  . " 18:00:00";
+    $endDate = strtotime("+6 day", strtotime(date("Y/m/d")));
+    $endDate = date("Y-m-d", $endDate) . " 18:00:00";
 
     $query = "SELECT * FROM tblslots WHERE start_event between  '$currentdate' and '$endDate'";
 
@@ -1116,16 +1119,52 @@ function get1Week(){
     return $result;
 }
 
-function get2ndWeek(){
+function get2ndWeek()
+{
     include 'connectDb.php';
 
-    $currentdate = date("Y-m-d") . " " .  date("G:i:s");
+    $currentdate = date("Y-m-d", strtotime("+1week")) . " 00:00:00";
     $currentdateTemp = strtotime($currentdate);
     $endDate = strtotime("+7 day", $currentdateTemp);
-    $endDate = date("Y-m-d", $endDate)  . " " .  date("G:i:s");
+    $endDate = date("Y-m-d", $endDate) . " " . date("G:i:s");
 
     $query = "SELECT * FROM tblslots WHERE start_event between  '$currentdate' and '$endDate'";
     $result = $db->query($query);
 
     return $result;
+}
+
+function sortDays($array1)
+{
+
+
+    $isSorted = false;
+
+    while (!$isSorted) {
+
+        $isSorted = true;
+
+
+        for ($i = 0; $i < count($array1) - 1; $i++) {
+
+
+            if (count($array1[$i]) > 0) {
+
+
+                if ($array1[$i][0][1] > $array1[$i + 1][0][1]) {
+
+                    $temp = $array1[$i];
+                    $array1[$i] = $array1[$i + 1];
+                    $array1[$i + 1] = $temp;
+
+                    $isSorted = false;
+                }
+            }
+
+
+        }
+    }
+
+    return $array1;
+
 }
