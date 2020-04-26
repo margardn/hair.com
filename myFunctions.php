@@ -1168,3 +1168,8 @@ function sortDays($array1)
     return $array1;
 
 }
+
+function slotsRequired($duration){
+    $slotsRequired=$duration/30;
+    return $slotsRequired;
+}

@@ -8,9 +8,6 @@ if ($_SESSION['user']['type']!=3 && $_SESSION['user']['type']!=2){
     echo '<script>window.location="hair.com_home.php"</script>';
     exit();
 }
-
-//printAllSessionVars();
-
 ?>
 
 <!doctype html>
