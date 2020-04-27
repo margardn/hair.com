@@ -17,7 +17,8 @@ $row = $result->fetch_assoc(); // fetch_assoc() - Fetch a result row as an assoc
 $serviceName = $row['serviceName'];
 $cost = $row['cost'];
 $duration = $row['durationMins'];
-$slotsRequired = slotsRequired($duration);
+$slotsRequired = slotsRequired($duration);//this functoin will retuern the number of slots an appointment needs
+echo "Slots Required - " . $slotsRequired . "<br> Time in mins required - " . $duration;
 
 
 //get customer name from Db
@@ -270,6 +271,38 @@ if ($resultBooked->num_rows > 0) {
 
             //Pass full list of days time slots to sortDays() function to be bubble sorted into correct order
             $sortedDays = sortDays($toBeSorted);
+
+
+
+
+
+            //If more than one slot is needed????? CO BE CONCLUDED
+            if ($slotsRequired>1) {
+                echo "Slots bigger than one";
+
+
+
+
+
+
+
+
+
+
+
+
+
+            }
+
+
+
+
+
+
+
+
+
+
             ?>
 
             <form action="slotRoundUp.php" method="post">
