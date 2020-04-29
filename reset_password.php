@@ -14,7 +14,8 @@ if (!isset($_SESSION['user']['type'])) {
     resetPW_ClientChoice();
     exit();
 }else{
-    echo "User type is either 2 or 3";
+    resetPW_ClientChoice();
+    exit();
 }
 
 

@@ -9,6 +9,10 @@ if ($_SESSION['user']['type'] != 3 && $_SESSION['user']['type'] != 2) {
     exit();
 }
 
+if (isset($_GET['edit'])) {
+    $edit = $_GET['edit'];
+}
+
 
 $customerID = $_POST['customerID'];
 $serviceID = $_POST['serviceID'];
@@ -69,8 +73,19 @@ $appSlot = date('l jS \of F Y', strtotime($rowAppSlot['start_event'])) . " <br> 
     <?php navBar(); ?>
     <div class="wrapper fadeInDown">
 
+        <p></p>
 
-        <h4>Appointment Details</h4>
+        <?php
+        if (isset($edit)) {echo $edit;
+            ?>
+            <h4>New Appointment Details</h4>
+            <?php
+        } else {
+            ?>
+
+            <h4>Appointment Details</h4>
+        <?php } ?>
+        <p></p>
 
         <!--            --><?php
         //            if ($newUser) {
@@ -94,7 +109,7 @@ $appSlot = date('l jS \of F Y', strtotime($rowAppSlot['start_event'])) . " <br> 
         //            ?>
 
 
-        <table width="400" visible="false">
+        <table width="70%" visible="false">
             <tr>
                 <td visible="false">
                     <Label ID="Label8" Font-Size=Smaller runat=server> Customer Name: </Label>
@@ -167,6 +182,16 @@ $appSlot = date('l jS \of F Y', strtotime($rowAppSlot['start_event'])) . " <br> 
 
             <input type="hidden" name="cost"
                    value="<?php echo $cost ?>">
+
+            <?php
+            if (isset($edit)) {
+
+            ?>
+            <input type="hidden" name="oldSlotID"
+                   value="<?php echo $edit ?>">
+            <?php
+            }
+            ?>
 
             <div><input type="submit" class="btn btn-default" value="Confirm"></div>
         </form>

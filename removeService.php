@@ -7,9 +7,9 @@ $id = $_GET["val"];
 
 
 
-"DELETE FROM `tblservices` WHERE `tblservices`.`serviceID` = 25;";
 
-$query = "DELETE FROM `tblservices` WHERE `tblservices`.`serviceID` = $id";
+
+$query = "UPDATE `tblservices` SET `active` = '0' WHERE `tblservices`.`serviceID` = $id";
 $result = mysqli_query($db, $query);
 
 

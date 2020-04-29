@@ -1343,43 +1343,46 @@
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="341" parent="335" name="title">
+    <column id="341" parent="335" name="serviceID">
       <Position>2</Position>
-      <DataType>varchar(255)|0s</DataType>
+      <DataType>int(10)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="342" parent="335" name="customerID">
       <Position>3</Position>
       <DataType>int(10)|0s</DataType>
+      <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="343" parent="335" name="stylistID">
       <Position>4</Position>
       <DataType>int(10)|0s</DataType>
+      <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="344" parent="335" name="serviceID">
+    <column id="344" parent="335" name="slotID">
       <Position>5</Position>
-      <DataType>int(10)|0s</DataType>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="345" parent="335" name="slotID">
-      <Position>6</Position>
       <DataType>int(255) unsigned|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="346" parent="335" name="customerID">
+    <column id="345" parent="335" name="money_in">
+      <Position>6</Position>
+      <DataType>decimal(13,2 digit)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <index id="346" parent="335" name="serviceID">
+      <ColNames>serviceID</ColNames>
+      <Type>btree</Type>
+    </index>
+    <index id="347" parent="335" name="customerID">
       <ColNames>customerID</ColNames>
       <Type>btree</Type>
     </index>
-    <index id="347" parent="335" name="stylistID">
+    <index id="348" parent="335" name="stylistID">
       <ColNames>stylistID</ColNames>
-      <Type>btree</Type>
-    </index>
-    <index id="348" parent="335" name="serviceID">
-      <ColNames>serviceID</ColNames>
       <Type>btree</Type>
     </index>
     <index id="349" parent="335" name="slotID">
@@ -1391,23 +1394,23 @@
       <ColNames>apptID</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="351" parent="335" name="customerID">
+    <foreign-key id="351" parent="335" name="serviceID">
+      <ColNames>serviceID</ColNames>
+      <RefSchemaName>hair.com</RefSchemaName>
+      <RefTableName>tblservices</RefTableName>
+      <RefColNames>serviceID</RefColNames>
+    </foreign-key>
+    <foreign-key id="352" parent="335" name="customerID">
       <ColNames>customerID</ColNames>
       <RefSchemaName>hair.com</RefSchemaName>
       <RefTableName>tblusers</RefTableName>
       <RefColNames>UserID</RefColNames>
     </foreign-key>
-    <foreign-key id="352" parent="335" name="stylistID">
+    <foreign-key id="353" parent="335" name="stylistID">
       <ColNames>stylistID</ColNames>
       <RefSchemaName>hair.com</RefSchemaName>
       <RefTableName>tblusers</RefTableName>
       <RefColNames>UserID</RefColNames>
-    </foreign-key>
-    <foreign-key id="353" parent="335" name="serviceID">
-      <ColNames>serviceID</ColNames>
-      <RefSchemaName>hair.com</RefSchemaName>
-      <RefTableName>tblservices</RefTableName>
-      <RefColNames>serviceID</RefColNames>
     </foreign-key>
     <foreign-key id="354" parent="335" name="slotID">
       <ColNames>slotID</ColNames>
@@ -1497,103 +1500,108 @@
       <DataType>decimal(13,2 digit)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="370" parent="337" name="PRIMARY">
+    <column id="370" parent="337" name="active">
+      <Position>6</Position>
+      <DataType>tinyint(1)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <key id="371" parent="337" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>serviceID</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="371" parent="338" name="slotID">
+    <column id="372" parent="338" name="slotID">
       <Position>1</Position>
       <DataType>int(255) unsigned|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="372" parent="338" name="start_event">
+    <column id="373" parent="338" name="start_event">
       <Position>2</Position>
       <DataType>datetime|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="373" parent="338" name="end_event">
+    <column id="374" parent="338" name="end_event">
       <Position>3</Position>
       <DataType>datetime|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="374" parent="338" name="PRIMARY">
+    <key id="375" parent="338" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>slotID</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="375" parent="339" name="UserID">
+    <column id="376" parent="339" name="UserID">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="376" parent="339" name="Firstname">
+    <column id="377" parent="339" name="Firstname">
       <Position>2</Position>
       <DataType>varchar(50)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="377" parent="339" name="Surname">
+    <column id="378" parent="339" name="Surname">
       <Position>3</Position>
       <DataType>varchar(50)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="378" parent="339" name="Username">
+    <column id="379" parent="339" name="Username">
       <Position>4</Position>
       <DataType>varchar(50)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="379" parent="339" name="Password">
+    <column id="380" parent="339" name="Password">
       <Position>5</Position>
       <DataType>char(255)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="380" parent="339" name="phonenumber">
+    <column id="381" parent="339" name="phonenumber">
       <Position>6</Position>
       <DataType>varchar(11)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="381" parent="339" name="address1">
+    <column id="382" parent="339" name="address1">
       <Position>7</Position>
       <DataType>varchar(50)|0s</DataType>
       <DefaultExpression>&apos;&apos;&apos;NULL&apos;&apos;&apos;</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="382" parent="339" name="address2">
+    <column id="383" parent="339" name="address2">
       <Position>8</Position>
       <DataType>varchar(50)|0s</DataType>
       <DefaultExpression>&apos;&apos;&apos;NULL&apos;&apos;&apos;</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="383" parent="339" name="postcode">
+    <column id="384" parent="339" name="postcode">
       <Position>9</Position>
       <DataType>varchar(8)|0s</DataType>
       <DefaultExpression>&apos;&apos;&apos;NULL&apos;&apos;&apos;</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="384" parent="339" name="DateRegistered">
+    <column id="385" parent="339" name="DateRegistered">
       <Position>10</Position>
       <DataType>datetime|0s</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>current_timestamp()</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="385" parent="339" name="UserType">
+    <column id="386" parent="339" name="UserType">
       <Position>11</Position>
       <DataType>int(1)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="386" parent="339" name="PRIMARY">
+    <key id="387" parent="339" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>UserID</ColNames>
       <Primary>1</Primary>

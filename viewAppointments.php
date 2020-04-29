@@ -115,23 +115,28 @@ user();
 
 
                     eventClick: function (event) {
-                        if (confirm("You have selected to remove this appointment. Are you sure you want to remove it?")) {
-                            var id = event.id;
-                            $.ajax({
-                                url: "delete.php",
-                                type: "POST",
-                                data: {id: id},
-                                success: function () {
-                                    calendar.fullCalendar('refetchEvents');
-                                    alert("Event Removed");
-                                }
-                            })
+                        // if (confirm("You have selected to remove this appointment. Are you sure you want to remove it?")) {
+                        //     var id = event.id;
+                        //     $.ajax({
+                        //         url: "delete.php",
+                        //         type: "POST",
+                        //         data: {id: id},
+                        //         success: function () {
+                        //             calendar.fullCalendar('refetchEvents');
+                        //             alert("Event Removed");
+                        //         }
+                        //     })
+                        // }
+                        //
+                        // header("Location: customers.php");
+
+
+                        if (confirm("Open appointment details?")) {
+                            window.location = "appointmentDetails.php?event=" + event.id;
                         }
                     },
-
                 });
             });
-
         </script>
 
     </head>

@@ -4,6 +4,10 @@ session_start();
 include 'connectDb.php';
 include 'myFunctions.php';
 
+if (isset($_GET['edit'])) {
+    $edit=$_GET['edit'];
+}
+
 user(); //This function check to see if the user is currently logged in
 
 $customerID = $_GET["customerID"];
@@ -100,7 +104,7 @@ if ($resultBooked->num_rows > 0) {
 
             <h5>Please select available slot for the following appointment:</h5>
             <p></p>
-            <table width="70%" visible="false">
+            <table width="80%" visible="false">
                 <tr>
                     <td visible="false">
                         <Label ID="Label8" Font-Size=Smaller runat=server> Customer Name: </Label>
@@ -305,7 +309,9 @@ if ($resultBooked->num_rows > 0) {
 
             ?>
 
-            <form action="slotRoundUp.php" method="post">
+            <form action="slotRoundUp.php<?php if (isset($edit)) {
+                echo "?edit=$edit";
+            } ?>" method="post">
                 <?php
 
                 //Loop through contents of $sortedDays array and present in button format for user selection

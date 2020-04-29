@@ -18,13 +18,15 @@ $data = array();
 
 
 if ($currentUser==0) {
-    $query = "SELECT * FROM tblappointments, tblslots, tblusers where tblappointments.slotID = tblslots.slotID 
-                                                    and tblappointments.customerID = tblusers.UserID     ORDER BY apptID";
+    $query = "SELECT * FROM tblappointments, tblslots, tblusers, tblservices where tblappointments.slotID = tblslots.slotID 
+                                                    and tblappointments.customerID = tblusers.UserID
+                                                                 and tblappointments.serviceID = tblservices.serviceID
+ORDER BY apptID";
 
 }else {
-    $query = "SELECT * FROM tblappointments, tblslots, tblusers where tblappointments.slotID = tblslots.slotID
+    $query = "SELECT * FROM tblappointments, tblslots, tblusers, tblservices where tblappointments.slotID = tblslots.slotID
                                                    and tblappointments.stylistID = '$currentUser' 
-                                                    and tblappointments.customerID = tblusers.UserID     ORDER BY apptID";
+                                                    and tblappointments.customerID = tblusers.UserID and tblappointments.serviceID = tblservices.serviceID     ORDER BY apptID";
 }
 
 
@@ -38,7 +40,7 @@ foreach($result as $row)
 {
     $data[] = array(
         'id'   => $row["apptID"],
-        'title'   => $row['Firstname'] . " " . $row['Surname'] . " - " . $row["title"],
+        'title'   => $row['Firstname'] . " " . $row['Surname'] . " - " . $row["serviceName"],
         'start'   => $row["start_event"],
         'end'   => $row["end_event"]
     );

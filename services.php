@@ -42,7 +42,7 @@ user();
     <p></p>
     <?php
 
-    $query = "SELECT * FROM tblservices";
+    $query = "SELECT * FROM tblservices where active = 1";
 
 
     $result = $db->query($query);
@@ -198,7 +198,7 @@ user();
 
 
     function deletePost() {
-        var ask = window.confirm("Are you sure you want to delete this Service?");
+        var ask = window.confirm("Are you sure you want to remove this Service?");
         if (ask) {
             //window.alert("This post was successfully deleted.");
 
