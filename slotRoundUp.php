@@ -4,10 +4,10 @@ include 'connectDb.php';
 include 'myFunctions.php';
 
 user(); //This function check to see if the user is currently logged in
-if ($_SESSION['user']['type'] != 3 && $_SESSION['user']['type'] != 2) {
-    echo '<script>window.location="hair.com_home.php"</script>';
-    exit();
-}
+//if ($_SESSION['user']['type'] != 3 && $_SESSION['user']['type'] != 2) {
+//    echo '<script>window.location="hair.com_home.php"</script>';
+//    exit();
+//}
 
 if (isset($_GET['edit'])) {
     $edit = $_GET['edit'];
@@ -76,7 +76,7 @@ $appSlot = date('l jS \of F Y', strtotime($rowAppSlot['start_event'])) . " <br> 
         <p></p>
 
         <?php
-        if (isset($edit)) {echo $edit;
+        if (isset($edit)) {
             ?>
             <h4>New Appointment Details</h4>
             <?php
@@ -84,29 +84,14 @@ $appSlot = date('l jS \of F Y', strtotime($rowAppSlot['start_event'])) . " <br> 
             ?>
 
             <h4>Appointment Details</h4>
-        <?php } ?>
+        <?php }
+
+        if (in_array($customerID, hairAnalysis())) {
+            echo "<p class='text-danger'>***WARNING: This customers last skin test has expired***</p>";
+        }
+        ?>
         <p></p>
 
-        <!--            --><?php
-        //            if ($newUser) {
-        //                ?>
-        <!--                <br>Hi <font color="black">-->
-        <?php //echo $_SESSION['user']['firstname'] ?><!--</font>,</br>-->
-        <!--                <p>Welcome to Hair.com!!!</p>-->
-        <!--                <p>Your account has been created with the following details. Please be aware these details can be-->
-        <!--                    edited-->
-        <!--                    from your account page</p>-->
-        <!--                --><?php
-        //
-        //            } elseif (!$newUser) {
-        //                ?>
-        <!--                <p>New user successfully created with the following details. Please pass these details on to the-->
-        <!--                    customer</p>-->
-        <!---->
-        <!--                --><?php
-        //            }
-        //
-        //            ?>
 
 
         <table width="70%" visible="false">

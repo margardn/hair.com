@@ -52,15 +52,14 @@ user();
     <table id="custTbl" class="display nowrap">
         <thead>
         <tr>
-            <th scope="col">User ID</th>
             <th scope="col">User Type</th>
             <th scope="col">Name</th>
             <th scope="col">Email Address</th>
             <th scope="col">Contact No</th>
             <th scope="col">Address</th>
             <th scope="col">Date Registered</th>
-            <th scope="col">Action</th>
-
+            <th scope="col">Book</th>
+            <th scope="col">Hair Analysis</th>
         </tr>
         </thead>
         <?php
@@ -78,20 +77,17 @@ user();
 
             ?>
             <tr >
-                <td> <?php echo $row['UserID'] ?> </td>
+<!--                <td> --><?php //echo $row['UserID'] ?><!-- </td>-->
                 <td>  <?php
 
                     if ($row['UserType'] == 1)
                         echo "Client";
                     elseif ($row['UserType'] == 2)
                         echo "Stylist";
-                    elseif ($row['UserType'] == 3)
-                        echo "Admin";
-                    ?> </td>
+                elseif ($row['UserType'] == 3)
+                echo "Admin";
+                ?> </td>
 
-
-
-<!--                <td> --><?php //echo $row['Firstname'] . " " . $row['Surname'] ?><!-- </td>-->
 
                 <td> <div contentEditable='true' class='edit' id='Firstname_<?php echo $id; ?>'>
                         <?php echo $Firstname; ?>
@@ -118,8 +114,13 @@ user();
                 <td> <?php echo strtok($row['DateRegistered'], " ") ?></td>
 
                 <td>
-                    <button type="button" class="btn btn-info" onclick="location.href='appBookForm.php?val=<?php echo $id  ?>';">Book</button>
+                    <button type="button" class="btn btn-info" onclick="location.href='appBookForm.php?custID=<?php echo $id  ?>';">Book</button>
                 </td>
+
+                <td>
+                    <button type="button" class="btn btn-info" onclick="location.href='hairAnalysis.php?val=<?php echo $id  ?>';">Hair Analysis</button>
+                </td>
+
             </tr>
 
             <?php

@@ -40,7 +40,10 @@ user();
 
                     // minTime: "08:00:00",
                     // maxTime: "18:00:00",
+                    //default: 1,
                     editable: false,
+                    allDaySlot: false,
+                    height: "auto",
                     header: {
                         left: 'prev,next today',
                         center: 'title',
@@ -49,10 +52,8 @@ user();
 
                     events: "load.php?>",
                     defaultView: 'agendaWeek',
+
                     businessHours: {
-
-
-
                         start: '09:00',
                         end: '17:00',
                         dow: [2, 3, 4, 5, 6]
@@ -202,7 +203,7 @@ user();
 
 
             <form class="float-right " method="get" action="bookApp.php">
-                <button class="btn btn-light">Book Appointment</button>
+                <button class="btn btn-info">Book Appointment</button>
             </form>
 
 
@@ -211,7 +212,7 @@ user();
     <div class="container float-left">
         <h5><?php if (isset($_SESSION['schedule']['stylist'])) {
 
-            //echo $_SESSION['schedule']['stylist'];
+                //echo $_SESSION['schedule']['stylist'];
                 if ($_SESSION['schedule']['stylist'] == 0) {
                     echo "All Stylists ";
                 } else {
@@ -239,8 +240,6 @@ user();
         <div id="calendar"></div>
 
     </div>
-
-
 </div>
 
 

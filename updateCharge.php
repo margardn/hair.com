@@ -5,18 +5,19 @@ $event = $_GET['appID'];
 
 $value = $_GET['value'];
 $value=trim($value,'£');
+$tip = $_GET['tip']??0;
+$tip=trim($tip,'£');
 $value=(float)$value;
+$tip=(float)$tip;
 
 
 
 
-var_dump($value);
 
 
 
-echo $event;
 
-$query = "UPDATE `tblappointments` SET `money_in`=$value WHERE apptID = $event";
+$query = "UPDATE `tblappointments` SET `money_in`=$value, `tip`=$tip WHERE apptID = $event";
 $query = mysqli_query($db, $query);
 header ("Location: viewAppointments.php");
 

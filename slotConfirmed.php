@@ -27,14 +27,28 @@ if (isset($oldSlotID)) {
     if ($db->query($query2) == true) {
     }
     if ($db->query($query) == true) {
-        echo '<script>alert("Appointment successfully amended...")</script>';
-        echo '<script>window.location="viewAppointments.php"</script>';
+        if ($_SESSION['user']['type']==1) {
+            echo '<script>alert("Appointment successfully amended...")</script>';
+            echo '<script>window.location="history.php"</script>';
+        }else {
+            echo '<script>alert("Appointment successfully amended...")</script>';
+            echo '<script>window.location="viewAppointments.php"</script>';
+        }
     }
 } else {
 
     if ($db->query($query) == true) {
         echo '<script>alert("Appointment successfully saved...")</script>';
-        echo '<script>window.location="viewAppointments.php"</script>';
+
+        if ($_SESSION['user']['type']==1) {
+
+            echo '<script>window.location="history.php"</script>';
+        }else{
+            echo '<script>window.location="viewAppointments.php"</script>';
+        }
+
+
+
     }else {
         echo '<script>alert("error...")</script>';
         echo '<script>window.location="viewAppointments.php"</script>';

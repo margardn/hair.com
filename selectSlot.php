@@ -101,6 +101,11 @@ if ($resultBooked->num_rows > 0) {
             <br id="formContent">
 
             <p></p>
+            <?php
+            if (in_array($customerID, hairAnalysis())) {
+                echo "<p class='text-danger'>***WARNING: This customers last skin test has expired***</p>";
+            }
+            ?>
 
             <h5>Please select available slot for the following appointment:</h5>
             <p></p>
@@ -175,7 +180,7 @@ if ($resultBooked->num_rows > 0) {
 
                 while ($row = mysqli_fetch_array($result2)) {
 
-                    //  If slit ID is in $slotInDay elements, do not add to the $day arrays
+                    //  If slot ID is in $slotInDay elements, do not add to the $day arrays
                     if (!in_array($row['slotID'], $bookedSlotID)) {
 
                         $day = $row['start_event'];//Pulls date of app't start from array on each loop
@@ -210,24 +215,28 @@ if ($resultBooked->num_rows > 0) {
 
                 while ($row2 = mysqli_fetch_array($result3)) {
 
-                    $day = $row2['start_event'];//Pulls date of app't start from array on each loop
-                    $day = strtotime($day);//Formats that to timestamp(int)
-                    $day = date("l", $day);//Changes $date to Day string with full wording
+                    if (!in_array($row2['slotID'], $bookedSlotID)) {
 
-                    if ($day == "Tuesday") {
-                        array_push($day6, $row2);
-                    }
-                    if ($day == "Wednesday") {
-                        array_push($day7, $row2);
-                    }
-                    if ($day == "Thursday") {
-                        array_push($day8, $row2);
-                    }
-                    if ($day == "Friday") {
-                        array_push($day9, $row2);
-                    }
-                    if ($day == "Saturday") {
-                        array_push($day10, $row2);
+                        $day = $row2['start_event'];//Pulls date of app't start from array on each loop
+                        $day = strtotime($day);//Formats that to timestamp(int)
+                        $day = date("l", $day);//Changes $date to Day string with full wording
+
+                        if ($day == "Tuesday") {
+                            array_push($day6, $row2);
+                        }
+                        if ($day == "Wednesday") {
+                            array_push($day7, $row2);
+                        }
+                        if ($day == "Thursday") {
+                            array_push($day8, $row2);
+                        }
+                        if ($day == "Friday") {
+                            array_push($day9, $row2);
+                        }
+                        if ($day == "Saturday") {
+                            array_push($day10, $row2);
+
+                        }
                     }
                 }//end "while ($row = mysqli_fetch_array($result))"
 
@@ -281,22 +290,22 @@ if ($resultBooked->num_rows > 0) {
 
 
             //If more than one slot is needed????? CO BE CONCLUDED
-            if ($slotsRequired>1) {
-                echo "Slots bigger than one";
-
-
-
-
-
-
-
-
-
-
-
-
-
-            }
+//            if ($slotsRequired>1) {
+//                echo "Slots bigger than one";
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//            }
 
 
 

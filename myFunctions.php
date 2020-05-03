@@ -1169,7 +1169,83 @@ function sortDays($array1)
 
 }
 
-function slotsRequired($duration){
-    $slotsRequired=$duration/30;
+function slotsRequired($duration)
+{
+    $slotsRequired = $duration / 30;
     return $slotsRequired;
 }
+
+function outOfDateTests($array)
+{ // This function receives array containing list of customers whose skin tests
+    // are out of date and returns array containing customers who should be highlighted
+
+    include 'connectDb.php';
+
+    $query = "SELECT UserID from tblusers where hairAnalysis = 1";
+
+    $customerIDs = array();
+    $result = $db->query($query);
+    if ($result->num_rows > 0) {
+
+        while ($row = mysqli_fetch_array($result)) {
+
+            array_push($customerIDs, $row['0']);
+
+        }//end "while ($row = mysqli_fetch_array($result))"
+    }
+
+    $result = array_intersect($array, $customerIDs);
+    return ($result);
+}// This function receives array containing list of customers whose skin tests
+// are out of date and returns array containing customers who should be highlighted
+
+
+function hairAnalysis()
+{
+    include 'connectDb.php';
+    //Build hair analysis array containin all customerID's with out of date skin tests
+    $previousDate = date("Y-m-d", date(strtotime("-6 months"), strtotime(date("Y-m-d"))));
+    $query = "Select customerID from tblhairanalysis where skinTestDate <= '$previousDate'";
+
+    $outOfDate = array();
+
+    $result = $db->query($query);
+    if ($result->num_rows > 0) {
+
+        while ($row = mysqli_fetch_array($result)) {
+
+            array_push($outOfDate, $row['customerID']);
+
+        }//end "while ($row = mysqli_fetch_array($result))"
+    }
+//remove duplicate entries
+    $outOfDate=array_unique($outOfDate);
+
+
+// Now get all customerID's with test which are in date
+    $inDate = array();
+
+    $query2 = "Select customerID from tblhairanalysis where skinTestDate >= '$previousDate'";
+    $result2 = $db->query($query2);
+    if ($result2->num_rows > 0) {
+
+        while ($row2 = mysqli_fetch_array($result2)) {
+
+            array_push($inDate, $row2['customerID']);
+
+        }//end "while ($row = mysqli_fetch_array($result))"
+    }
+
+//remove duplicate entries
+    $inDate=array_unique($inDate);
+
+//Now compare and leave only customerID's which were in the outofdate() array and not in the inDate() array
+    $highlightedCustomers = array_values(array_diff($outOfDate, $inDate));
+
+// Pass to function where this list is compared to customer who need tested
+    $highlightedCustomers = outOfDateTests($highlightedCustomers);
+
+    return $highlightedCustomers;
+
+}
+

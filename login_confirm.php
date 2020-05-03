@@ -44,6 +44,10 @@ if ($_SESSION['user']['type'] == 1) {
     echo '<script>window.location="hair.com_home.php"</script>';
     exit();
 } elseif ($_SESSION['user']['type'] == 2 || $_SESSION['user']['type'] == 3) {
+
+    //Generate session array containing customers who need hair analysis in next visit
+    $_SESSION['hairAnalysis'] = hairAnalysis();
+
     echo '<script>window.location="hair.com_stylistAdmin_home.php"</script>';
     exit();
     //echo $_SESSION['user']['type'];

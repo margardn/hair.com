@@ -45,17 +45,10 @@ if ($_SESSION['user']['type']!=3 && $_SESSION['user']['type']!=2){
 
             <p/>
             <form method="get" action="viewAppointments.php">
-                <button class="btn btn-primary btn-block"><h1>View/Edit Appointments</h1></button>
-            </form>
-            <p/>
-            <form method="get" action="customers.php">
-                <button class="btn btn-primary btn-block"><h1>View/Edit Customers</h1></button>
+                <button class="btn btn-primary btn-block"><h1>Calender</h1></button>
             </form>
             <p/>
 
-            <form method="get" action="createUser.php">
-                <button class="btn btn-primary btn-block"><h1>Create client</h1></button>
-            </form>
 
             <p/>
 
@@ -65,16 +58,27 @@ if ($_SESSION['user']['type']!=3 && $_SESSION['user']['type']!=2){
 
             <p/>
 
+            <form method="get" action="customers.php">
+                <button class="btn btn-primary btn-block"><h1>Customers</h1></button>
+            </form>
+            <p/>
+
+            <form method="get" action="createUser.php">
+                <button class="btn btn-primary btn-block"><h1>Create client</h1></button>
+            </form>
+
+
+
             <p/>
 
             <form method="get" action="services.php">
-                <button class="btn btn-primary btn-block"><h1>View/Edit Services</h1></button>
+                <button class="btn btn-primary btn-block"><h1>Services</h1></button>
             </form>
 
             <p/>
 
             <form method="get" action="reports.php">
-                <button class="btn btn-primary btn-block"><h1>Generate Reports</h1></button>
+                <button class="btn btn-primary btn-block"><h1>Reports</h1></button>
             </form>
 
 

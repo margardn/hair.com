@@ -36,6 +36,7 @@ if (isset($edit)) {
 
 $query3 = "SELECT UserID, Firstname, Surname FROM tblusers where UserType != '1'";
 $result3 = mysqli_query($db, $query3);
+
 if (isset($edit)) {
 
 
@@ -80,7 +81,15 @@ if (isset($edit)) {
                 ?>
 
                 <h4>Book Appointment</h4>
-            <?php } ?>
+            <?php }
+
+
+            if (in_array($id, hairAnalysis())) {
+                echo "<p class='text-danger'>***WARNING: This customers last skin test has expired***</p>";
+            }
+
+
+            ?>
             <BR>
             <div class="modal-body">
 

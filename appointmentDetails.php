@@ -18,6 +18,7 @@ $sytlistID = $rowEvent["stylistID"];
 $customerID = $rowEvent["customerID"];
 $serviceID = $rowEvent["serviceID"];
 $slotID = $rowEvent["slotID"];
+$complete = $rowEvent["complete"];
 
 
 $queryStylist = "SELECT * FROM tblusers where UserID = $sytlistID";
@@ -98,6 +99,15 @@ $appSlot = date('l jS \of F Y', strtotime($rowSlotTime['start_event'])) . "   " 
 
                 <form action="editProfile.php" method="post">
 
+                    <div class="form-group row">
+                        <label class="col-sm-3 col-form-label">App't ID:</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" name="apptid"
+                                   value="<?php echo $event ?>"
+                                   readonly="readonly" required>
+                        </div>
+                    </div>
+
 
                     <div class="form-group row">
                         <label class="col-sm-3 col-form-label">Customer:</label>
@@ -154,11 +164,31 @@ $appSlot = date('l jS \of F Y', strtotime($rowSlotTime['start_event'])) . "   " 
 
                         <input type="button" class="btn btn-default" id="edit-app" value="Edit Appointment"
                                onclick="window.location='appBookForm.php?custID=<?php echo $customerID . "&serv=" . $serviceID
-                               . "&styl=" . $stylistID . "&edit=$slotID"?>';">
+                                   . "&styl=" . $stylistID . "&edit=$slotID" ?>';">
 
+                        <?php
+                        if ($_SESSION['user']['type'] == 2 || $_SESSION['user']['type'] == 3){
+                        ?>
 
                         <input type="button" class="btn btn-primary float-right" id="checkout" value="Checkout"
                                onclick="toggle_hide(event)"></div>
+                    <?php
+                    }//end  if ($_SESSION['user']['type'] == 2 || $_SESSION['user']['type'] == 3)
+
+                    if (in_array($customerID, $_SESSION['hairAnalysis'])) {
+                        echo "<p class='text-danger'>***WARNING: This customers last skin test has expired***</p>";
+
+                        ?>
+                        <button type="button" class="btn btn-info" onclick="location.href='hairAnalysis.php?val=<?php echo $customerID  ?>';">Hair Analysis</button>
+                    <?php
+
+
+                    }
+
+                    if ($complete) {
+                        echo "Complete = " . $complete;
+                    }
+                    ?>
 
                 </form>
 
@@ -172,6 +202,16 @@ $appSlot = date('l jS \of F Y', strtotime($rowSlotTime['start_event'])) . "   " 
 
                         </div>
                     </div>
+
+                    <div class="form-group row">
+                        <label class="col-sm-3 col-form-label">Tip?:</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="tip">
+
+                        </div>
+                    </div>
+
+
 
                     <div>
                         <button type="button" class="btn btn-default" onclick="updateMoneyIn(<?php echo $event ?>);">
@@ -190,10 +230,16 @@ $appSlot = date('l jS \of F Y', strtotime($rowSlotTime['start_event'])) . "   " 
     function updateMoneyIn(moneyInEvent) {
 
         var value = document.getElementById("confirm").value;
+        value= parseFloat(value.replace(/[^\d.]/g, ''));
+        var tip = document.getElementById("tip").value;
+        tip=parseFloat(tip.replace(/[^\d.]/g, ''));;
+
+        var total = value + tip;
 
 
-        if (confirm("Charge to customer account = " + value)) {
-            window.location.href = 'updateCharge.php?appID=' + moneyInEvent + '&value=' +value+'';
+
+        if (confirm("Charge to customer account = £" + total)) {
+            window.location.href = 'updateCharge.php?appID=' + moneyInEvent + '&value=' + value + '&tip=' + tip + '';
             return true;
         }
 
