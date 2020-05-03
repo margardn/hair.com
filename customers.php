@@ -178,6 +178,9 @@ user();
                 url: 'updateCust.php',
                 type: 'post',
                 data: { field:field_name, value:value, id:edit_id },
+                beforeSend: function () {
+                    return confirm("You have changed a value. Are you sure you want to save?");
+                },
                 success:function(response){
                     console.log('Save successfully');
                 }

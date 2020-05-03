@@ -149,7 +149,7 @@ if ($result2->num_rows > 0) {
                             <label class="col-sm-3 col-form-label">Date of skin test</label>
                             <div class="col-sm-9" required>
                                 <input type="text" class="form-control" name="date"
-                                       value="<?php echo date("d/m/Y") ?>" readonly>
+                                       value="<?php echo date("d-m-Y") ?>" readonly>
                             </div>
                         </div>
 

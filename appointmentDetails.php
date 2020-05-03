@@ -19,6 +19,8 @@ $customerID = $rowEvent["customerID"];
 $serviceID = $rowEvent["serviceID"];
 $slotID = $rowEvent["slotID"];
 $complete = $rowEvent["complete"];
+$paid = "£" . $rowEvent['money_in'];
+$tip = "£" . $rowEvent['tip'];
 
 
 $queryStylist = "SELECT * FROM tblusers where UserID = $sytlistID";
@@ -90,6 +92,18 @@ $appSlot = date('l jS \of F Y', strtotime($rowSlotTime['start_event'])) . "   " 
             <BR>
             <h4>Appointment Details</h4>
             <BR>
+            <?php
+            if ($complete) {
+                ?>
+
+                <p class="text-danger">This appointment is closed</p>
+
+            <?php
+
+
+
+            }
+            ?>
 
 
             <!------------------------------------------------------------------------------------------------->
@@ -147,17 +161,50 @@ $appSlot = date('l jS \of F Y', strtotime($rowSlotTime['start_event'])) . "   " 
                     </div>
 
 
-                    <div class="form-group row">
-                        <label class="col-sm-3 col-form-label">Cost for appointment:</label>
-                        <div class="col-sm-9">
-                            <input type="tel" class="form-control" name="phonenumber" pattern="[0-9]{11}"
-                                   value="<?php echo $cost ?>" readonly="readonly" required>
+                    <?php
+                    if (!$complete) {
+
+                        ?>
+                        <div class="form-group row">
+                            <label class="col-sm-3 col-form-label">Cost for appointment:</label>
+                            <div class="col-sm-9">
+                                <input type="tel" class="form-control" "
+                                       value="<?php echo $cost ?>" readonly="readonly" required>
+                            </div>
                         </div>
-                    </div>
+                        <?php
+                    }else{
+                        ?>
+                        <div class="form-group row">
+                            <label class="col-sm-3 col-form-label">Customer paid:</label>
+                            <div class="col-sm-9">
+                                <input type="tel" class="form-control" "
+                                       value="<?php echo $paid ?>" readonly="readonly" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label class="col-sm-3 col-form-label">Tip:</label>
+                            <div class="col-sm-9">
+                                <input type="tel" class="form-control" "
+                                value="<?php echo $tip ?>" readonly="readonly" required>
+                            </div>
+                        </div>
+
+
+                    <?php
+
+
+                    }
+                    ?>
 
                     <div><input type="button" class="btn btn-default float-right" id="submit-button" value="Submit"
                                 hidden>
 
+                        <?php
+                        if (!$complete) {
+
+                        ?>
 
                         <input type="button" class="btn btn-default" id="cancel" value="Cancel Appointment"
                                onclick="deleteme(<?php echo $event ?>)">
@@ -173,6 +220,9 @@ $appSlot = date('l jS \of F Y', strtotime($rowSlotTime['start_event'])) . "   " 
                         <input type="button" class="btn btn-primary float-right" id="checkout" value="Checkout"
                                onclick="toggle_hide(event)"></div>
                     <?php
+
+                    }//end if("$complete)
+
                     }//end  if ($_SESSION['user']['type'] == 2 || $_SESSION['user']['type'] == 3)
 
                     if (in_array($customerID, $_SESSION['hairAnalysis'])) {
@@ -185,9 +235,6 @@ $appSlot = date('l jS \of F Y', strtotime($rowSlotTime['start_event'])) . "   " 
 
                     }
 
-                    if ($complete) {
-                        echo "Complete = " . $complete;
-                    }
                     ?>
 
                 </form>
@@ -235,6 +282,7 @@ $appSlot = date('l jS \of F Y', strtotime($rowSlotTime['start_event'])) . "   " 
         tip=parseFloat(tip.replace(/[^\d.]/g, ''));;
 
         var total = value + tip;
+
 
 
 

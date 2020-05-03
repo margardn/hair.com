@@ -6,10 +6,7 @@ include 'myFunctions.php';
 user();
 
 $customerID = $_POST['customerID'];
-$date = strtotime($_POST['date']);
-//$date = str_replace('/', '-', $date);
-
-$date = date('Y-m-d', $date);
+$date = date('Y-m-d');
 $texture = $_POST['texture'];
 $condition = $_POST['condition'];
 $form = $_POST['form'];

@@ -17,7 +17,9 @@ $tip=(float)$tip;
 
 
 
-$query = "UPDATE `tblappointments` SET `money_in`=$value, `tip`=$tip WHERE apptID = $event";
+
+
+$query = "UPDATE `tblappointments` SET `money_in`=$value, `tip`=$tip, complete=1 WHERE apptID = $event";
 $query = mysqli_query($db, $query);
 header ("Location: viewAppointments.php");
 
