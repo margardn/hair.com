@@ -5,90 +5,69 @@ include '../connectDb.php';
 include '../myFunctions.php';
 
 
-//
-////Build hair analysis array containin all customerID's with out of date skin tests
-//$previousDate = date("Y-m-d", date(strtotime("-6 months"), strtotime(date("Y-m-d"))));
-//$query = "Select customerID from tblhairanalysis where skinTestDate <= '$previousDate'";
-//
-//$outOfDate = array();
-//
-//$result = $db->query($query);
-//if ($result->num_rows > 0) {
-//
-//    while ($row = mysqli_fetch_array($result)) {
-//
-//        array_push($outOfDate, $row['customerID']);
-//
-//    }//end "while ($row = mysqli_fetch_array($result))"
-//}
-////remove duplicate entries
-//$outOfDate=array_unique($outOfDate);
-//
-//
-//// Now get all customerID's with test which are in date
-//$inDate = array();
-//
-//$query2 = "Select customerID from tblhairanalysis where skinTestDate >= '$previousDate'";
-//$result2 = $db->query($query2);
-//if ($result2->num_rows > 0) {
-//
-//    while ($row2 = mysqli_fetch_array($result2)) {
-//
-//        array_push($inDate, $row2['customerID']);
-//
-//    }//end "while ($row = mysqli_fetch_array($result))"
-//}
-//
-////remove duplicate entries
-//$inDate=array_unique($inDate);
-//
-////Now compare and leave only customerID's which were in the outofdate() array and not in the inDate() array
-//$highlightedCustomers = array_values(array_diff($outOfDate, $inDate));
-//
-//// Pass to function where this list is compared to customer who need tested
-//$highlightedCustomers = outOfDateTests($highlightedCustomers);
-//
-//print_r($highlightedCustomers);
-//
+?>
+
+<html>
+<head>
 
 
-//$query = "SELECT tblappointments.appID ,tblusers.Firstname, tblusers.Surname, tblservices.serviceName, tblservices.cost,
-//       tblslots.start_event, tblSlots.end_event
-//
-//FROM tblappointments join tblslots on tblappointments.slotID = tblslots.slotID
-//    join tblusers on tblappointments.stylistID = tblusers.UserID
-//    join tblservices t on tblappointments.serviceID = t.serviceID
-//    where tblappointments.customerID = 2";
+    <!--  jQuery -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
 
-$query = "SELECT tblusers.Firstname, tblusers.Surname
+    <!-- Isolated Version of Bootstrap, not needed if your site already uses Bootstrap -->
+    <link rel="stylesheet" href="https://formden.com/static/cdn/bootstrap-iso.css"/>
 
-FROM tblappointments 
-    JOIN tblusers ON tblappointments.stylistID = tblusers.UserID
-    
+    <!-- Bootstrap Date-Picker Plugin -->
+    <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
 
-
-WHERE tblappointments.apptID=93";
-
-echo $query;
+</head>
+<body>
 
 
-//$result = $db->query($query);
-//
-//while ($row = $result->fetch_assoc()){
-//
-//    echo "£" . $row['start_event']. "<br>";
-//
-//
-//
-//}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-6 col-sm-6 col-xs-12">
+
+            <!-- Form code begins -->
+            <form method="post">
+                <div class="form-group"> <!-- Date input -->
+                    <label class="control-label" for="date">Date</label>
+                    <input class="form-control" id="date" name="date" placeholder="MM/DD/YYY" type="text"/>
+                </div>
+                <div class="form-group"> <!-- Submit button -->
+                    <button class="btn btn-primary " name="submit" type="submit">Submit</button>
+                </div>
+            </form>
+            <!-- Form code ends -->
+
+        </div>
+    </div>
+</div>
 
 
 
+<script>
+    $(document).ready(function () {
+        var date_input = $('input[name="date"]'); //our date input has the name "date"
+        var container = $('.bootstrap-iso form').length > 0 ? $('.bootstrap-iso form').parent() : "body";
+        var options = {
+            format: 'mm/dd/yyyy',
+            container: container,
+            todayHighlight: true,
+            autoclose: true,
+        };
+        date_input.datepicker(options);
+    })
+</script>
 
 
+</body>
 
 
-
+</html>
 
 
 

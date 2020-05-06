@@ -98,8 +98,7 @@ $appSlot = date('l jS \of F Y', strtotime($rowSlotTime['start_event'])) . "   " 
 
                 <p class="text-danger">This appointment is closed</p>
 
-            <?php
-
+                <?php
 
 
             }
@@ -169,17 +168,17 @@ $appSlot = date('l jS \of F Y', strtotime($rowSlotTime['start_event'])) . "   " 
                             <label class="col-sm-3 col-form-label">Cost for appointment:</label>
                             <div class="col-sm-9">
                                 <input type="tel" class="form-control" "
-                                       value="<?php echo $cost ?>" readonly="readonly" required>
+                                value="<?php echo $cost ?>" readonly="readonly" required>
                             </div>
                         </div>
                         <?php
-                    }else{
+                    } else {
                         ?>
                         <div class="form-group row">
                             <label class="col-sm-3 col-form-label">Customer paid:</label>
                             <div class="col-sm-9">
                                 <input type="tel" class="form-control" "
-                                       value="<?php echo $paid ?>" readonly="readonly" required>
+                                value="<?php echo $paid ?>" readonly="readonly" required>
                             </div>
                         </div>
 
@@ -192,7 +191,7 @@ $appSlot = date('l jS \of F Y', strtotime($rowSlotTime['start_event'])) . "   " 
                         </div>
 
 
-                    <?php
+                        <?php
 
 
                     }
@@ -219,23 +218,27 @@ $appSlot = date('l jS \of F Y', strtotime($rowSlotTime['start_event'])) . "   " 
 
                         <input type="button" class="btn btn-primary float-right" id="checkout" value="Checkout"
                                onclick="toggle_hide(event)"></div>
-                    <?php
+                <?php
 
-                    }//end if("$complete)
+                }//end if("$complete)
 
-                    }//end  if ($_SESSION['user']['type'] == 2 || $_SESSION['user']['type'] == 3)
+                }//end  if ($_SESSION['user']['type'] == 2 || $_SESSION['user']['type'] == 3)
+
+                if (isset($_SESSION['hairAnalysis'])) {
 
                     if (in_array($customerID, $_SESSION['hairAnalysis'])) {
                         echo "<p class='text-danger'>***WARNING: This customers last skin test has expired***</p>";
 
                         ?>
-                        <button type="button" class="btn btn-info" onclick="location.href='hairAnalysis.php?val=<?php echo $customerID  ?>';">Hair Analysis</button>
-                    <?php
-
+                        <button type="button" class="btn btn-info"
+                                onclick="location.href='hairAnalysis.php?val=<?php echo $customerID ?>';">Hair Analysis
+                        </button>
+                        <?php
 
                     }
+                }
 
-                    ?>
+                ?>
 
                 </form>
 
@@ -259,7 +262,6 @@ $appSlot = date('l jS \of F Y', strtotime($rowSlotTime['start_event'])) . "   " 
                     </div>
 
 
-
                     <div>
                         <button type="button" class="btn btn-default" onclick="updateMoneyIn(<?php echo $event ?>);">
                             Confirm
@@ -277,13 +279,12 @@ $appSlot = date('l jS \of F Y', strtotime($rowSlotTime['start_event'])) . "   " 
     function updateMoneyIn(moneyInEvent) {
 
         var value = document.getElementById("confirm").value;
-        value= parseFloat(value.replace(/[^\d.]/g, ''));
+        value = parseFloat(value.replace(/[^\d.]/g, ''));
         var tip = document.getElementById("tip").value;
-        tip=parseFloat(tip.replace(/[^\d.]/g, ''));;
+        tip = parseFloat(tip.replace(/[^\d.]/g, ''));
+        ;
 
         var total = value + tip;
-
-
 
 
         if (confirm("Charge to customer account = £" + total)) {

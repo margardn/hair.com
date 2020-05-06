@@ -13,8 +13,8 @@ if ($_SESSION['user']['type'] == 2 || $_SESSION['user']['type'] == 3) {
 }
 
 
-$query = "SELECT tblappointments.apptID, tblappointments.money_in, tblusers.Firstname, tblusers.Surname, tblservices.serviceName, tblservices.cost,
-       tblslots.start_event, tblslots.end_event 
+$query = "SELECT tblappointments.apptID, tblappointments.money_in, tblusers.Firstname, tblusers.Surname, tblservices.serviceName,
+       tblservices.cost, tblslots.start_event, tblslots.end_event 
 
 FROM tblappointments 
     JOIN tblusers ON tblappointments.stylistID = tblusers.UserID 
