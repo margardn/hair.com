@@ -1136,21 +1136,12 @@ function get2ndWeek()
 
 function sortDays($array1)
 {
-
-
     $isSorted = false;
 
     while (!$isSorted) {
-
         $isSorted = true;
-
-
         for ($i = 0; $i < count($array1) - 1; $i++) {
-
-
             if (count($array1[$i]) > 0) {
-
-
                 if ($array1[$i][0][1] > $array1[$i + 1][0][1]) {
 
                     $temp = $array1[$i];
@@ -1160,13 +1151,9 @@ function sortDays($array1)
                     $isSorted = false;
                 }
             }
-
-
         }
     }
-
     return $array1;
-
 }
 
 function slotsRequired($duration)
@@ -1203,7 +1190,7 @@ function outOfDateTests($array)
 function hairAnalysis()
 {
     include 'connectDb.php';
-    //Build hair analysis array containin all customerID's with out of date skin tests
+    //Build hair analysis array containing all customerID's with out-of-date skin tests
     $previousDate = date("Y-m-d", date(strtotime("-6 months"), strtotime(date("Y-m-d"))));
     $query = "Select customerID from tblhairanalysis where skinTestDate <= '$previousDate'";
 

@@ -248,6 +248,7 @@ if ($resultBooked->num_rows > 0) {
             //Load populated arrays into milti dimentional array
             $toBeSorted = array();
 
+
             if (count($day1) > 0) {
                 array_push($toBeSorted, $day1);
                 // array_push($day3, $row);
@@ -283,38 +284,8 @@ if ($resultBooked->num_rows > 0) {
             }
 
             //Pass full list of days time slots to sortDays() function to be bubble sorted into correct order
+
             $sortedDays = sortDays($toBeSorted);
-
-
-
-
-
-            //If more than one slot is needed????? CO BE CONCLUDED
-//            if ($slotsRequired>1) {
-//                echo "Slots bigger than one";
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//            }
-
-
-
-
-
-
-
-
-
 
             ?>
 

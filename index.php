@@ -47,9 +47,7 @@ include 'myFunctions.php';
                 <!------------------------------------------------------>
                 <div class="field-group">
                     <div>
-                        <!--<input type="button" name="rememberme" id="rememberme"/> <label>Remember me</label>-->
                         <a href="reset_password.php">Forgot password</a>
-
                     </div>
                 </div>
                 <!------------------------------------------------------>
